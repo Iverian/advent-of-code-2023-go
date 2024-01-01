@@ -20,7 +20,7 @@ const sessionVar string = "AC_SESSION_ID"
 func Timer(name string) func() {
 	start := time.Now()
 	return func() {
-		fmt.Printf("%s took %v\n", name, time.Since(start))
+		fmt.Printf("%s took %.2fμs\n", name, float64(time.Since(start).Nanoseconds())/1000.)
 	}
 }
 
